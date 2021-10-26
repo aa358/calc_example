@@ -18,7 +18,7 @@ class Calculator:
         """ multiply two numbers and get result"""
         self.result = value_a * value_b
         return self.result
-    def divide_numbers (self, value_a, value_b):
+    def divide_numbers(self, value_a, value_b):
         """ divide two numbers and get result"""
         try:
             self.result = value_a / value_b
