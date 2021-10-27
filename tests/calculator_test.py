@@ -42,4 +42,5 @@ def test_calculator_dividebyzero():
     """ tests division by zero"""
     calc = Calculator()
     result = calc.divide_numbers(3,0)
+    return result
     # the expected result is the exception

@@ -1,3 +1,7 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-function-docstring
+
 class Calculator:
     """ This is the Calculator class"""
 
@@ -22,6 +26,6 @@ class Calculator:
         """ divide two numbers and get result"""
         try:
             self.result = value_a / value_b
-            return self.result
-        except:
-            print("Division by zero is not possible")
+        except ZeroDivisionError:
+            print("A number cannot be divided by zero")
+        return self.result
