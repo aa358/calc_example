@@ -30,7 +30,3 @@ class Calculator:
         """ multiplication number from result"""
         Calculations.add_multiplication_calculation(tuple_values)
         return True
-    def divide_numbers(tuple_values: tuple):
-        """ division number from result"""
-        Calculations.add_division_calculation(tuple_values)
-        return True
