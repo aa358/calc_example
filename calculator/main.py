@@ -1,16 +1,12 @@
-# pylint: disable=missing-module-docstring
-# pylint: disable=missing-class-docstring
-# pylint: disable=missing-function-docstring
-
 """ This is the increment function"""
-from calc.history.calculations import Calculations
+from calculator.history.calculations import Calculations
 
 #the calculator class just contains the methods to calculate
 class Calculator:
     """ This is the Calculator class"""
     #the calculator class just calls methods on Calculations class
     @staticmethod
-    def get_result_value():
+    def get_last_result_value():
         """ This is the gets the result of the calculation"""
         # I made this method so that I don't have more than one action per function
         return Calculations.get_last_calculation_result_value()
@@ -29,4 +25,9 @@ class Calculator:
     def multiply_numbers(tuple_values: tuple):
         """ multiplication number from result"""
         Calculations.add_multiplication_calculation(tuple_values)
+        return True
+    @staticmethod
+    def divide_numbers(tuple_values: tuple):
+        """ multiplication number from result"""
+        Calculations.add_division_calculation(tuple_values)
         return True
