@@ -9,3 +9,11 @@ def test_calculation_subtraction():
     #Act
     #Assert
     assert division.get_result() == 4.0
+
+def test_division_throws_exception():
+    """test divide by 0 raises error"""
+    nums = (8.0, 0.0)
+    err_test = Division(nums)
+    with pytest.raises(Exception) as err:
+        err_test.get_result()
+    assert err.type == ZeroDivisionError
