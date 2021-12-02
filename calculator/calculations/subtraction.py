@@ -1,14 +1,24 @@
-"""Subtraction Class"""
-import pprint
+"""Subtraction class"""
+from abc import abstractmethod
 
-from calculator.calculations.calculation import Calculation
+from calc.operations.calculation import Calculation
 
-class Subtraction(Calculation):
-    """subtraction calculation object"""
+
+# pylint: disable=too-few-public-methods
+
+class Math(Calculation):
+    """Subtracting numbers"""
+    @abstractmethod
+    def get_result(self):
+        pass
+
+
+class Subtraction(Math):
+    """Subtracting numbers"""
+
     def get_result(self):
         """get the subtraction results"""
-        difference_of_values = 0.0
+        result = 0.0
         for value in self.values:
-            difference_of_values =   difference_of_values - value
-            pprint.pprint(value)
-        return difference_of_values
+            result = result - value
+        return result
