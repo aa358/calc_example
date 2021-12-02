@@ -1,28 +1,17 @@
-""" This is the increment function"""
-from calculator.history.calculations import Calculations
-class Calculator:
-    """ This is the Calculator class"""
-    @staticmethod
-    def get_last_result_value():
-        """ This is the gets the result of the calculation"""
-        return Calculations.get_last_calculation_result_value()
-    @staticmethod
-    def add_numbers(tuple_values: tuple):
-        """ adds list of numbers"""
-        Calculations.add_addition_calculation(tuple_values)
-        return True
-    @staticmethod
-    def subtract_numbers(tuple_values: tuple):
-        """ subtract a list of numbers from result"""
-        Calculations.add_subtraction_calculation(tuple_values)
-        return True
-    @staticmethod
-    def multiply_numbers(tuple_values: tuple):
-        """ multiplication number from result"""
-        Calculations.add_multiplication_calculation(tuple_values)
-        return True
-    @staticmethod
-    def divide_numbers(tuple_values: tuple):
-        """ multiplication number from result"""
-        Calculations.add_division_calculation(tuple_values)
-        return True
+import glob
+import os
+
+import pandas as pd
+
+from operations.addition import Addition
+
+dir_name = os.path.dirname(__file__)
+folder = os.path.join(dir_name, 'input')
+directories = os.listdir(folder)
+
+# remove after testing
+files = glob.glob(folder + "/*.csv")
+
+for file in files:
+    nums = pd.read_csv(file)
+    print(Addition.get_result(nums))
