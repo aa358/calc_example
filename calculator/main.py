@@ -14,4 +14,4 @@ files = glob.glob(folder + "/*.csv")
 
 for file in files:
     nums = pd.read_csv(file)
-    print(Addition.get_result(nums))
+    print(Addition.get_result(nums)) 
