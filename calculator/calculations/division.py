@@ -1,15 +1,23 @@
-"""Division Class"""
-from calculator.calculations.calculation import Calculation
+"""Division class"""
+from calc.operations.calculation import Calculation
+
+
+# pylint: disable=too-few-public-methods
+# pylint: disable=unused-variable
 
 class Division(Calculation):
-    """division calculation object"""
-    def get_result(self):
-        """get the division results"""
-        value_list = []
+    """Dividing numbers"""
 
-        for value in self.values:
-            value_list.append(value)
-        result = value_list[0]
-        for num in range(1, len(value_list)):
-            result /= value_list[num]
+    def get_result(self):
+        """Do the division if not dividing by zero"""
+        result = 1
+        rev = self.values[::-1]
+
+        for value in rev:
+            try:
+                result = value / result
+                if result == 0:
+                    raise ZeroDivisionError
+            except ZeroDivisionError as error:
+                return ZeroDivisionError
         return result
