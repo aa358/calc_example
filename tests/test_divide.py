@@ -1,11 +1,17 @@
-"""Testing Division"""
-from calculator.calculations.division import Division
+"""Testing division"""
+from calc.operations.division import Division
+# pylint: disable=too-few-public-methods
 
-def test_calculation_subtraction():
-    """testing that our calculator has a static method for multiplication"""
-    #Arrange
-    nums = (8.0,2.0)
+
+def test_division():
+    """testing 3 divided by 2"""
+    nums = (6, 2)
     division = Division(nums)
-    #Act
-    #Assert
-    assert division.get_result() == 4.0
+    assert division.get_result() == 3
+
+
+def test_divide_by_zero():
+    """testing 3 divided by 2"""
+    nums = (6, 0)
+    division = Division(nums)
+    assert division.get_result() == ZeroDivisionError
